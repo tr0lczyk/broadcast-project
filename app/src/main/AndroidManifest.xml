@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".ExampleBroadCastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.olczyk.com.broadcastproject.EXAMPLE_ACTION"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -10,10 +10,6 @@ public class ExampleBroadCastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if ("android.olczyk.com.broadcastproject.EXAMPLE_ACTION".equals(intent.getAction())){
-            String receivedText =
-                    intent.getStringExtra("android.olczyk.com.broadcastproject.EXTRA_TEXT");
-            Toast.makeText(context, receivedText, Toast.LENGTH_SHORT).show();
-        }
+        Toast.makeText(context, "EBR triggered", Toast.LENGTH_SHORT).show();
     }
 }

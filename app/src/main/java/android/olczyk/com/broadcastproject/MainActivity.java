@@ -11,17 +11,7 @@ import org.androidannotations.annotations.EActivity;
 @EActivity(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
 
-    ExampleBroadCastReceiver exampleBroadCastReceiver = new ExampleBroadCastReceiver();
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(exampleBroadCastReceiver);
-    }
-
     @AfterViews
     public void aVoid(){
-        IntentFilter filter = new IntentFilter("android.olczyk.com.broadcastproject.EXAMPLE_ACTION");
-        registerReceiver(exampleBroadCastReceiver,filter);
     }
 }
