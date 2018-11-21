@@ -13,22 +13,15 @@ public class MainActivity extends AppCompatActivity {
 
     ExampleBroadCastReceiver exampleBroadCastReceiver = new ExampleBroadCastReceiver();
 
-
     @Override
-    protected void onStart() {
-        super.onStart();
-        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        registerReceiver(exampleBroadCastReceiver,filter);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onDestroy() {
+        super.onDestroy();
         unregisterReceiver(exampleBroadCastReceiver);
     }
 
     @AfterViews
     public void aVoid(){
-
+        IntentFilter filter = new IntentFilter("android.olczyk.com.broadcastproject.EXAMPLE_ACTION");
+        registerReceiver(exampleBroadCastReceiver,filter);
     }
 }
